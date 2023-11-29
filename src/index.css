@@ -1,0 +1,169 @@
+.pages {
+  width:auto;
+  padding-top:10vh;
+  align-items:center;
+}
+
+.page .TodoWrapper {
+ display: flex;
+top: 20px;
+}
+.TodoForm {
+ justify-content: center;
+ width: 100%;
+}
+
+.todo-input {
+ outline: none;
+ background: none;
+ border:none;
+ padding: 0.75rem 1rem;
+ margin-top: 3rem;
+ margin-bottom: 1rem;
+ width: 400px;
+ color: #000;
+ margin-left:10px;
+}
+.todo-btn {
+ background:  rgb(201, 255, 253);
+ border-radius: 10px;
+ color: #121212;
+ border: none;
+ padding: 0.55rem;
+ cursor: pointer;
+}
+
+.Todo {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-size: calc(10px + 2vmin);
+ background:rgb(255, 255, 255);
+ color: #000000;
+ padding:0.5rem 12rem;
+ border-radius: 10px;
+ margin-bottom: 1rem;
+}
+
+
+.TodoWrapper {
+ margin-top: 2rem; 
+ border-radius: 5px;
+ background: rgba(241, 248, 248, 0.838);
+ padding: 2rem;
+ border-radius: 20px;
+ position: relative; 
+ margin-left: 150px;
+ margin: 0 auto;
+}
+
+.todo-btn:active{
+ scale: 1.05;
+}
+.todo-btn:hover {
+ color: rgba(0, 0, 0, 0.933);
+ background-color: rgb(16, 175, 193);
+}
+
+.Todo:hover {
+ background-color: rgb(201, 255, 253) ;
+ scale: 1.02;
+}
+
+.todo-input:hover{
+ scale: 1.09;
+ 
+}
+
+
+.fa-trash {
+ margin-left: 0.75rem;
+}
+
+.incompleted {
+ color: #fff;
+ cursor: pointer;
+}
+
+.completed {
+ color: #c5aeff;
+ text-decoration: line-through;
+ cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+ cursor: pointer;
+} 
+
+.content-wrapper {
+ display: flex;
+ align-items: stretch;
+}
+
+.center-content {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.body {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.button {
+  position: fixed;
+  top: 100px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
+  right: 20px;
+  z-index: 2; /* Assurez-vous que le bouton apparaît au-dessus du contenu */
+}
+
+.button button {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.calendar-cont ainer {
+  position: fixed;
+  top: 140px; /* Ajustez la valeur en fonction de la hauteur de votre bouton */
+  right: 20px; /* Ajustez la valeur en fonction de l'emplacement souhaité */
+  z-index: 1; /* Assurez-vous que le calendrier apparaît au-dessus du contenu */
+  display: inline-block;
+}
+
+.clock{
+  position:relative;
+  margin: 10px;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#051817,#a5fdff);
+  height:90px;
+  width: 250px;
+  color:black;
+  text-shadow: 1px 1px 7px;
+  border-radius: 15px;
+  border: 2px solid silver;
+  box-shadow:0 0 5px 5px ;
+}
+
+.clock section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.clock section p{
+   font-size: 1.8rem;
+}
+
+.clock section small {
+   color: black;
+   text-shadow: none;
+}
