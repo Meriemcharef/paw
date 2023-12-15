@@ -1,0 +1,90 @@
+/* todowrapper.module.css */
+
+.TodoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 5px;
+    background: rgba(241, 248, 248, 0.838);
+    padding: 2rem;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .TodoForm {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .todo-input {
+    outline: none;
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    width: 400px;
+    color: #000;
+    margin-left: 10px;
+  }
+  
+  .todo-btn {
+    background: rgb(201, 255, 253);
+    border-radius: 10px;
+    color: #121212;
+    border: none;
+    padding: 0.55rem;
+    cursor: pointer;
+  }
+  
+  .Todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    background: rgb(255, 255, 255);
+    color: #000000;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .todo-btn:active {
+    transform: scale(1.05);
+  }
+  
+  .todo-btn:hover {
+    color: rgba(0, 0, 0, 0.933);
+    background-color: rgb(16, 175, 193);
+  }
+  
+  .Todo:hover {
+    background-color: rgb(201, 255, 253);
+    transform: scale(1.02);
+  }
+  
+  .todo-input:hover {
+    transform: scale(1.09);
+  }
+  
+  .fa-trash {
+    margin-left: 0.75rem;
+  }
+  
+  .incompleted {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .completed {
+    color: #c5aeff;
+    text-decoration: line-through;
+    cursor: pointer;
+  }
+  
+  .edit-icon,
+  .delete-icon {
+    cursor: pointer;
+  }
+  

@@ -1,125 +1,138 @@
-.pages {
-  width:auto;
-  padding-top:10vh;
-  align-items:center;
+/* Ajouter une marge entre la navbar et les titres */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 15px; /* Vous pouvez ajuster la valeur selon l'espace souhaité */
 }
 
-.page .TodoWrapper {
- display: flex;
-top: 20px;
+.pages {
+  width: auto;
+  padding-top: 10vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top:20px;
 }
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.page .TodoWrapper {
+  display: flex;
+  top: 20px;
+}
+
 .TodoForm {
- justify-content: center;
- width: 100%;
+  justify-content: center;
+  width: 100%;
 }
 
 .todo-input {
- outline: none;
- background: none;
- border:none;
- padding: 0.75rem 1rem;
- margin-top: 3rem;
- margin-bottom: 1rem;
- width: 400px;
- color: #000;
- margin-left:10px;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  width: 400px;
+  color: #000;
+  margin-left: 10px;
 }
+
 .todo-btn {
- background:  rgb(201, 255, 253);
- border-radius: 10px;
- color: #121212;
- border: none;
- padding: 0.55rem;
- cursor: pointer;
+  background: rgb(201, 255, 253);
+  border-radius: 10px;
+  color: #121212;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
 }
 
 .Todo {
- display: flex;
- flex-direction: column;
- align-items: center;
- font-size: calc(10px + 2vmin);
- background:rgb(255, 255, 255);
- color: #000000;
- padding:0.5rem 12rem;
- border-radius: 10px;
- margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  background: rgb(255, 255, 255);
+  color: #000000;
+  padding: 0.5rem 2rem; /* Adjusted padding */
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
-
 
 .TodoWrapper {
- margin-top: 2rem; 
- border-radius: 5px;
- background: rgba(241, 248, 248, 0.838);
- padding: 2rem;
- border-radius: 20px;
- position: relative; 
- margin-left: 150px;
- margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 5px;
+  background: rgba(241, 248, 248, 0.838);
+  padding: 2rem;
+  position: relative;
+  margin: 0 auto;
 }
 
-.todo-btn:active{
- scale: 1.05;
+.todo-btn:active {
+  transform: scale(1.05); /* Corrected property name */
 }
+
 .todo-btn:hover {
- color: rgba(0, 0, 0, 0.933);
- background-color: rgb(16, 175, 193);
+  color: rgba(0, 0, 0, 0.933);
+  background-color: rgb(16, 175, 193);
 }
 
 .Todo:hover {
- background-color: rgb(201, 255, 253) ;
- scale: 1.02;
+  background-color: rgb(201, 255, 253);
+  transform: scale(1.02);
 }
 
-.todo-input:hover{
- scale: 1.09;
- 
+.todo-input:hover {
+  transform: scale(1.09);
 }
-
 
 .fa-trash {
- margin-left: 0.75rem;
+  margin-left: 0.75rem;
 }
 
 .incompleted {
- color: #fff;
- cursor: pointer;
+  color: #fff;
+  cursor: pointer;
 }
 
 .completed {
- color: #c5aeff;
- text-decoration: line-through;
- cursor: pointer;
+  color: #c5aeff;
+  text-decoration: line-through;
+  cursor: pointer;
 }
 
 .edit-icon,
 .delete-icon {
- cursor: pointer;
-} 
+  cursor: pointer;
+}
 
 .content-wrapper {
- display: flex;
- align-items: stretch;
+  display: flex;
+  align-items: stretch;
 }
 
 .center-content {
- flex: 1;
- display: flex;
- justify-content: center;
- align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .body {
- display: flex;
- flex-direction: column;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button {
   position: fixed;
-  top: 100px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
+  top: 100px;
   right: 20px;
-  z-index: 2; /* Assurez-vous que le bouton apparaît au-dessus du contenu */
+  z-index: 2;
 }
 
 .button button {
@@ -127,28 +140,28 @@ top: 20px;
   cursor: pointer;
 }
 
-.calendar-cont ainer {
+.calendar-container {
   position: fixed;
-  top: 140px; /* Ajustez la valeur en fonction de la hauteur de votre bouton */
-  right: 20px; /* Ajustez la valeur en fonction de l'emplacement souhaité */
-  z-index: 1; /* Assurez-vous que le calendrier apparaît au-dessus du contenu */
+  top: 140px;
+  right: 20px;
+  z-index: 1;
   display: inline-block;
 }
 
-.clock{
-  position:relative;
-  margin: 10px;;
+.clock {
+  position: relative;
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#051817,#a5fdff);
-  height:90px;
+  background: linear-gradient(#051817, #a5fdff);
+  height: 90px;
   width: 250px;
-  color:black;
+  color: black;
   text-shadow: 1px 1px 7px;
   border-radius: 15px;
   border: 2px solid silver;
-  box-shadow:0 0 5px 5px ;
+  box-shadow: 0 0 5px 5px;
 }
 
 .clock section {
@@ -159,11 +172,107 @@ top: 20px;
   padding: 0.5em;
 }
 
-.clock section p{
-   font-size: 1.8rem;
+.clock section p {
+  font-size: 1.8rem;
 }
 
 .clock section small {
-   color: black;
-   text-shadow: none;
+  color: black;
+  text-shadow: none;
 }
+
+.reminder {
+  margin-bottom: 8px;
+}
+
+.reminder span {
+  font-size: 24px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.reminder button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.reminder button:last-child {
+  margin-right: 0;
+}
+
+.addTaskButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addTaskButton:hover {
+  background-color: #45a049;
+}
+
+/* GestionTaches.css */
+
+.titre-principal {
+  font-weight: bold;
+  font-size: 28px;
+  color: red;
+  margin-bottom: 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 10px;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.gestion-taches-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tache-table {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+.gauche {
+  float: left;
+}
+
+.droite {
+  float: right;
+}
+
+.titre-religieux {
+  font-weight: bold;
+  font-size: 28px;
+  color: rgb(255, 0, 0);
+  margin-bottom: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+

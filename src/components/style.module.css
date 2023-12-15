@@ -1,157 +1,91 @@
-/* style.module.css */
-
-* {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.headerContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.authMenu {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  background-color: rgba(191, 227, 230, 0.838);
-  padding: 15px;
-  margin-top: 0;
-  justify-content: space-between;
-  font-size: 15px;
-  border-bottom: 2px solid #000;
-}
-
-.navbar:hover {
-  background-color: rgb(127, 255, 249);
-  color: var(--primary-color);
-  cursor: pointer;
-}
-
-.links a {
-  display: flex;
-  text-decoration: none;
-  color: inherit;
-  padding: 15px;
-}
-
-.links a.clicked,
-.links a:hover {
-  background-color: rgb(5, 32, 35);
-  cursor: pointer;
-  color: #e1e1e1;
-}
-
-.clicked:hover {
-  color: rgba(255, 0, 0, 0.933);
-  background-color: rgb(5, 32, 35);
-}
-
-.auth {
-  display: flex;
-  align-items: center;
-}
-
-.login,
-.register {
-  color: #000;
-  background-color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 20px;
-  font-size: 14px;
-  margin-left: 10px;
-  display: inline-block;
-  padding: 10px;
-  text-decoration: none;
-  margin-left: 0;
-}
-
-.login:active,
-.register:active {
-  text-decoration: underline;
-  transform: scale(1.05);
-}
-
-.register:hover,
-.login:hover {
-  transform: scale(1.05);
-  color: rgb(255, 0, 0);
-}
-
-#plan {
-  font-size: 20px;
-  color: #000;
-}
-
-.sidebar {
-  width: 200px;
-  height: 100vh;
-  background-color: rgba(191, 227, 230, 0.838);
-  border-right: 2px solid #000;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar:hover {
-  background-color: rgb(127, 255, 249);
-}
-
-.sidebarlist .row {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.sidebarlist .row:hover {
-  background-color: rgb(5, 32, 35);
-  color: #e1e1e1;
-  cursor: pointer;
-}
-
-.sidebarlist .row#active {
-  background-color: rgb(5, 32, 35);
-  color: #e1e1e1;
-}
 
 .App {
   text-align: center;
   display: flex;
 }
 
-#to {
+.important {
+  text-align: center;
+  margin-top: 20px;
+}
+
+  .important h2 {
+    font-weight: bold;
+    font-size: 50px;
+    color: rgb(255, 0, 0); /* Couleur différente pour les tâches religieuses */
+    margin-bottom: 0;
+    display: block;
+}
+
+.taskListTitle {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px; /* Ajout de la marge en bas pour créer un espace */
+}
+
+.addTaskButton {
+  background-color: #4caf50; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  padding: 10px 20px; /* Espacement interne du bouton */
+  font-size: 16px; /* Taille de police du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  border-radius: 4px; /* Ajouter des coins arrondis au bouton */
+  cursor: pointer; /* Ajouter un pointeur de curseur au survol du bouton */
+}
+
+.addTaskButton:hover {
+  background-color: #45a049; /* Couleur de fond au survol du bouton */
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#side {
-  height: 100vh;
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
 }
 
-.rowContainer {
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.icon {
-  margin-right: 10px;
+h2 {
+  margin-bottom: 20px;
 }
 
-.title {
-  margin-left: auto;
-  flex: 1;
+label {
+  display: block;
+  margin-bottom: 10px;
 }
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+
+
+
 

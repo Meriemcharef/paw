@@ -1,12 +1,10 @@
-// Myday.js
 import React, { useState, useEffect } from 'react';
-import styles from '../components/style.module.css';
-import ReactCalendar from '../components/ReactCalendar';
-import Todowrapper from '../components/todowrapper';
+// import Todowrapper from '../components/todowrapper';
 import Clock from '../components/Clock';
+import styles from './myday.module.css';
+import  TacheList from '../components/Tachelist';
 
 function Myday() {
-  const [showCalendar, setShowCalendar] = useState(false);
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -14,10 +12,6 @@ function Myday() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [startTime, setStartTime] = useState(0);
   const [elapsedTime, setElapsedTime] = useState(0);
-
-  const handleCalendarButtonClick = () => {
-    setShowCalendar(!showCalendar);
-  };
 
   const handleStartTimer = () => {
     setStartTime(Date.now() - elapsedTime);
@@ -76,34 +70,30 @@ function Myday() {
     return number < 10 ? `0${number}` : number.toString();
   };
 
-  return (
-    <div className={styles.body}>
-      <div className='button'>
-        <button onClick={handleCalendarButtonClick}>
-          {showCalendar ? 'Masquer le calendrier' : 'Afficher le calendrier'}
-        </button>
-      </div>
-      {showCalendar && <ReactCalendar />}
-      <Clock
-        timerDays={timerDays}
-        timerHours={timerHours}
-        timerMinutes={timerMinutes}
-        timerSeconds={timerSeconds}
-        onStart={handleStartTimer}
-        onPause={handlePauseTimer}
-        onRestart={handleRestartTimer}
-        onStop={handleStopTimer}
-        showRestartButton={!timerRunning && elapsedTime > 0}
-      />
-      <div className={styles.timerButtons}>
-        <button onClick={handleStartTimer} disabled={timerRunning}>Start</button>
-        <button onClick={handlePauseTimer} disabled={!timerRunning}>Pause</button>
-        <button onClick={handleStopTimer} disabled={!timerRunning}>Arrêter</button>
-        <button onClick={handleRestartTimer} disabled={timerRunning || elapsedTime === 0}>Redémarrer</button>
-      </div>
-      <Todowrapper />
+ 
+return (
+  <div className={styles.myDayContainer}>
+    <Clock
+      timerDays={timerDays}
+      timerHours={timerHours}
+      timerMinutes={timerMinutes}
+      timerSeconds={timerSeconds}
+      onStart={handleStartTimer}
+      onPause={handlePauseTimer}
+      onRestart={handleRestartTimer}
+      onStop={handleStopTimer}
+      showRestartButton={!timerRunning && elapsedTime > 0}
+    />
+    <div className={styles.timerButtons}>
+      <button onClick={handleStartTimer} disabled={timerRunning}>Start</button>
+      <button onClick={handlePauseTimer} disabled={!timerRunning}>Pause</button>
+      <button onClick={handleStopTimer} disabled={!timerRunning}>Arrêter</button>
+      <button onClick={handleRestartTimer} disabled={timerRunning || elapsedTime === 0}>Redémarrer</button>
     </div>
-  );
+    {/* <Todowrapper /> */}
+    <TacheList/>
+  </div>
+);
 }
 
 export default Myday;

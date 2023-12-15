@@ -1,0 +1,47 @@
+/* TacheGestion.module.css */
+
+.container {
+    text-align: center;
+  }
+  
+  .titre-principal {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour la table des tâches */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Styles pour le formulaire d'ajout de proposition */
+  input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-right: 8px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

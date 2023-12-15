@@ -1,4 +1,4 @@
-// Sidebar.jsx
+// Sidebar.js
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IoMenuOutline as MenuIcon } from 'react-icons/io5';
@@ -7,18 +7,20 @@ import TaskIcon from '@mui/icons-material/Task';
 import ReportIcon from '@mui/icons-material/Report';
 import AllOutIcon from '@mui/icons-material/AllOut';
 import GradingIcon from '@mui/icons-material/Grading';
-import classes from './style.module.css';
+import classes from './sidebar.module.css';
+import { useTheme } from '../theme/ThemeContext';
 
 const Sidebar = () => {
   const [clickedLink, setClickedLink] = useState(null);
+  const { isDarkMode } = useTheme();
 
   const handleLinkClick = (link) => {
     setClickedLink(link);
+    console.log(isDarkMode);
   };
 
   return (
-    <div className={classes.sidebar}>
-      <div className={classes.sidebarList}>
+    <div className={`${classes.sidebar} ${isDarkMode ? classes.darkMode : ''}`}>
         <div className={classes.links}>
           <NavLink
             to="/myday"
@@ -75,7 +77,6 @@ const Sidebar = () => {
             <div id="title" className={classes.title}>Completed</div>
           </NavLink>
         </div>
-      </div>
     </div>
   );
 };

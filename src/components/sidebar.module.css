@@ -1,0 +1,192 @@
+
+/* style.module.css for sidebar */
+
+  body {
+    background-color: #fff; 
+    color: #000;
+  }
+  
+  .taskListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .taskListTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .title {
+    margin-left: auto;
+    flex: 1;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .reminder {
+    background-color: rgba(255, 0, 0, 0.933); /* Red for important tasks */
+  }
+  
+  .addButton {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black */
+    border: 2px solid #000000; /* Black */
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .modalOverlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal {
+    background-color: #ffffff; /* White */
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+ 
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    color: #000000;
+    /* background: linear-gradient(90deg, rgb(142, 147, 161), rgb(137, 208, 231)); */
+    background-color:  rgb(153, 190, 203);
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.753)  ;  
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    overflow: hidden; /* Add overflow */
+    min-height:900px;
+  }
+
+  .sidebarlist .row {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .sidebarlist .row:hover {
+    background-color: rgb(5, 32, 35);
+    color: #e1e1e1;
+    cursor: pointer;
+  }
+  
+  .sidebarlist .row#active {
+    background-color: rgb(5, 32, 35);
+    color: #e1e1e1;
+  }
+  
+  .darkMode .sidebar {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  
+  body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  .rowContainer {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+  }
+  
+  #to {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #plan {
+    font-size: 20px;
+    color: #000;
+  }
+  
+  .links a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px;
+  }
+  
+  .links a.clicked,
+  .links a:hover {
+    background-color: rgb(5, 32, 35);
+    cursor: pointer;
+    color: #e1e1e1;
+  }
+  
+  .clicked:hover {
+    color: rgba(255, 0, 0, 0.933);
+    background-color: rgb(5, 32, 35);
+  }
+  
+
+  
+  .darkMode  .sidebar {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+  
+  body.dark-mode {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .darkMode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  

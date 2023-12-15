@@ -1,0 +1,11 @@
+ /* All.css */
+
+.page {
+    text-align: center;
+  }
+  
+  .gestion-taches-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  

@@ -1,0 +1,24 @@
+  /* semaine.css */
+
+.agenda-semaine {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .jour-agenda {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .taches-du-jour {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .taches-du-jour li {
+    margin-bottom: 5px;
+  }
+  
+  /* Ajoutez d'autres styles au besoin */
+  

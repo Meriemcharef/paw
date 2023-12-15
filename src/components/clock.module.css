@@ -1,0 +1,49 @@
+.timer-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .clock {
+    position: relative;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#051817, #a5fdff);
+    height: 120px;
+    width: 300px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    border: 2px solid #33aaff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .clock section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  }
+  
+  .clock section p {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .clock section small {
+    color: #ddd;
+    font-size: 0.8rem;
+  }
+  

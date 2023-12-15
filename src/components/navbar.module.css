@@ -1,0 +1,140 @@
+/* style.module.css for Navbar */
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .authMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    background-color:  rgb(153, 190, 203);
+    color: #000000;
+    padding: 15px;
+    margin-top: 0;
+    justify-content: space-between;
+    font-size: 15px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.62);
+    z-index: 1;
+    overflow: hidden; /* Add overflow */
+  }
+
+  .links a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px;
+  }
+  
+  .links a.clicked,
+  .links a:hover {
+    background-color: rgb(5, 32, 35);
+    cursor: pointer;
+    color: #e1e1e1;
+  }
+  
+  .clicked:hover {
+    color: rgba(255, 0, 0, 0.933);
+    background-color: rgb(5, 32, 35);
+  }
+  
+  .auth {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login,
+  .register {
+    color: #000;
+    background-color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-left: 10px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 0;
+  }
+  
+  .login:active,
+  .register:active {
+    text-decoration: underline;
+    transform: scale(1.05);
+  }
+  
+  .register:hover,
+  .login:hover {
+    transform: scale(1.05);
+    color: rgb(255, 0, 0);
+  }
+  
+  #plan {
+    font-size: 20px;
+    color: #000;
+  }
+  
+  .menuBtn {
+    cursor: pointer;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .dropdownItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px; /* Add border-radius for rounded corners */
+  padding: 8px 12px; /* Adjust padding for better appearance */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
+  }
+  
+  /* Add other styles as needed */
+  
+  .darkMode .navbar {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+  
+  body.dark-mode {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .darkMode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .darkMode .dropdownItem {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-radius: 4px; /* Add border-radius for rounded corners */
+    padding: 8px 12px; /* Adjust padding for better appearance */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
+  }
