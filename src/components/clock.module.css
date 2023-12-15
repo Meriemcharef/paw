@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    justify-content: flex-start;
+    width: 100vh;
+ 
   }
   
   .timer {
@@ -19,11 +20,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#051817, #a5fdff);
+    background: linear-gradient( rgb(176, 196, 234),  rgb(129, 170, 246));
     height: 120px;
     width: 300px;
     color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    /*text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);*/
     border-radius: 15px;
     border: 2px solid #33aaff;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);

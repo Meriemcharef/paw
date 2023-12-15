@@ -97,7 +97,7 @@
     height: 100vh;
     color: #000000;
     /* background: linear-gradient(90deg, rgb(142, 147, 161), rgb(137, 208, 231)); */
-    background-color:  rgb(153, 190, 203);
+    background-color:  rgb(129, 170, 246);
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.753)  ;  
     display: flex;
     flex-direction: column;

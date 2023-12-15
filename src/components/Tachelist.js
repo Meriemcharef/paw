@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 const TacheList = () => {
+  const [showForm, setShowForm] = useState(false);
+  const toggleFormVisibility = () => {
+    setShowForm(!showForm);
+  };
+  const [items,setItems]=useState('');
   const [taches, setTaches] = useState([]);
   const [nouvelleTache, setNouvelleTache] = useState({
     titre: '',
@@ -12,6 +16,7 @@ const TacheList = () => {
   });
   const [tacheEnEdition, setTacheEnEdition] = useState(null);
   const [erreur, setErreur] = useState('');
+  const [inputData,setInputData]=useState('');
 
   // Charger les tâches sauvegardées au chargement du composant
   useEffect(() => {
@@ -34,10 +39,11 @@ const TacheList = () => {
   };
 
   const ajouterTache = () => {
-    if (!nouvelleTache.titre || !nouvelleTache.description || !nouvelleTache.heure) {
-      setErreur('Veuillez compléter tous les champs obligatoires.');
-      return;
-    }
+  if(!nouvelleTache.titre || !nouvelleTache.description || !nouvelleTache.heure){
+    setErreur('Veuillez compléter tous les champs obligatoires.');
+  
+  }
+    
 
     setTaches((prevTaches) => [...prevTaches, nouvelleTache]);
     setNouvelleTache({
@@ -94,28 +100,35 @@ const TacheList = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container p-10 m-10">
       <h1>Liste des Tâches</h1>
       {erreur && <p style={{ color: 'red' }}>{erreur}</p>}
-      <div>
-      <label>Titre :</label>
-        <input
+      <div className='form-container p-0 m-10'>
+      <button  className="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-700" onClick={toggleFormVisibility}>Add&EditForm</button>
+        
+
+      {showForm && (
+        <div className='form flex content-center'>
+      <div className="titre" >
+      <label htmlFor="titre" >Titre :</label>
+       <input 
+        class="form-control"  
           type="text"
           name="titre"
           value={nouvelleTache.titre}
           onChange={handleInputChange}
         />
       </div>
-      <div>
-        <label>Description :</label>
+      <div className='description'>
+        <label htmlFor="description">Description :</label>
         <textarea
           name="description"
           value={nouvelleTache.description}
           onChange={handleInputChange}
         ></textarea>
       </div>
-      <div>
-        <label>Difficulté :</label>
+      <div className='difficulte'>
+        <label htmlFor='difficulte'>Difficulté :</label>
         <select
           name="difficulte"
           value={nouvelleTache.difficulte}
@@ -126,8 +139,8 @@ const TacheList = () => {
           <option value="difficile">Difficile</option>
         </select>
       </div>
-      <div>
-        <label>Heure :</label>
+      <div className='time'>
+        <label htmlFor='heure'>Heure :</label>
         <input
           type="time"
           name="heure"
@@ -135,10 +148,10 @@ const TacheList = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div>
-        <label>Niveau de progression :</label>
+      <div className='progression'>
+        <label htmlFor='progression'>Niveau de progression :</label>
         <select
-          name="statut"
+          name="progression"
           value={nouvelleTache.statut}
           onChange={handleInputChange}
         >
@@ -148,25 +161,49 @@ const TacheList = () => {
         </select>
       </div>
       {tacheEnEdition === null ? (
-        <button onClick={ajouterTache}>Ajouter Tâche</button>
-      ) : (
-        <button onClick={mettreAJourTache}>Mettre à Jour</button>
-      )}
-      <ul>
-        {taches.map((tache, index) => (
-          <li key={index}>
-            <h3>{tache.titre}</h3>
-            <p>{tache.description}</p>
-            <p>Difficulté : {tache.difficulte}</p>
-            <p>Heure : {tache.heure}</p>
-            <p>Niveau de progression : {tache.statut}</p>
-            <div>
-              <button onClick={() => editerTache(index)}>Éditer</button>
-              <button onClick={() => supprimerTache(index)}>Supprimer</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+                <button  className="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-700" onClick={ajouterTache}>sauvegardées</button>
+              ) : (
+                <button  className="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-700" onClick={mettreAJourTache}>Mettre à Jour</button>
+              )}
+      
+      </div>)}
+   
+        
+        <table className="table-auto border border-purple-600">
+          <thead>
+            <tr className="bg-purple-100">
+              <th className="border border-purple-400 px-2 py-2">Task Title</th>
+              <th className="border border-purple-400 px-2 py-2">Task Description</th>
+              <th className="border border-purple-400 px-2 py-2">Task Progress</th>
+              <th className="border border-purple-400 px-2 py-2">Task Level</th>
+              <th className="border border-purple-400 px-2 py-2">Task time</th>
+              <th className="border border-purple-400 px-2 py-2">Task Edit</th>
+              <th className="border border-purple-400 px-2 py-2">Task Delete</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {taches.map((tache, index) => (
+              <tr key={tache.index}>
+                <td className="border border-purple-400 px-2 py-2">{tache.titre}</td>
+                <td className="border border-purple-400 px-2 py-2">{tache.description}</td>
+                <td className="border border-purple-400 px-2 py-2">{tache.statut}</td>
+                <td className="border border-purple-400 px-2 py-2">{tache.difficulte}</td>
+                  <td className="border border-purple-400 px-2 py-2">{tache.heure}</td>
+                <td className="border border-purple-400 px-2 py-2">
+                <button onClick={() => editerTache(index)}>Éditer</button></td>
+                <td className="border border-purple-400 px-2 py-2">
+
+                <button onClick={() => supprimerTache(index)}>Supprimer</button>
+                </td>
+            
+        
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+      </div>
     </div>
   );
 };

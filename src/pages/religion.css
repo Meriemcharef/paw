@@ -19,7 +19,7 @@ table {
   
   /* Styles pour le titre religieux */
   .titre-religieux {
-    color: #c00;
+    color: rgb(248, 22, 22);
     font-size: 24px;
     margin-bottom: 20px;
   }

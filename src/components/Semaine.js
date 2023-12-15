@@ -95,4 +95,3 @@ const Semaine = ({ date }) => {
 };
 
 export default Semaine;
-

@@ -34,14 +34,14 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink
-            to="/task"
-            className={`row ${clickedLink === '/task' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
-            onClick={() => handleLinkClick('/task')}
+            to="/myweek"
+            className={`row ${clickedLink === '/myweek' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
+            onClick={() => handleLinkClick('/myweek')}
           >
             <div id="icon" className={classes.icon}>
               <TaskIcon />
             </div>
-            <div id="title" className={classes.title}>Task</div>
+            <div id="title" className={classes.title}>Myweek</div>
           </NavLink>
 
           <NavLink
@@ -54,27 +54,35 @@ const Sidebar = () => {
             </div>
             <div id="title" className={classes.title}>Important</div>
           </NavLink>
-
-          <NavLink
-            to="/all"
-            className={`row ${clickedLink === '/all' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
-            onClick={() => handleLinkClick('/all')}
-          >
-            <div id="icon" className={classes.icon}>
-              <AllOutIcon />
-            </div>
-            <div id="title" className={classes.title}>All</div>
-          </NavLink>
-
-          <NavLink
-            to="/completed"
-            className={`row ${clickedLink === '/completed' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
-            onClick={() => handleLinkClick('/completed')}
+           <NavLink
+            to="/Counter"
+            className={`row ${clickedLink === '/Counter' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
+            onClick={() => handleLinkClick('/Counter')}
           >
             <div id="icon" className={classes.icon}>
               <GradingIcon />
             </div>
-            <div id="title" className={classes.title}>Completed</div>
+            <div id="title" className={classes.title}>Counter</div>
+          </NavLink>
+        <NavLink
+          to="/religion"
+          className={`row ${clickedLink === '/religion' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
+          onClick={() => handleLinkClick('/religion')}
+                  >
+          <div id="icon" className={classes.icon}>
+          <GradingIcon />
+          </div>
+            <div id="title" className={classes.title}>Religion</div>
+          </NavLink>
+          <NavLink
+            to="/mesAchats"
+            className={`row ${clickedLink === '/mesAchats' ? `${classes.active} ${classes.clicked}` : ''} ${classes.rowContainer}`}
+            onClick={() => handleLinkClick('/mesAchats')}
+          >
+            <div id="icon" className={classes.icon}>
+              <AllOutIcon />
+            </div>
+            <div id="title" className={classes.title}>My Buys</div>
           </NavLink>
         </div>
     </div>

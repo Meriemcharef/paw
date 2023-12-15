@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-// import Todowrapper from '../components/todowrapper';
+import React from 'react';
 import Clock from '../components/Clock';
-import styles from './myday.module.css';
-import  TacheList from '../components/Tachelist';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import styles from './Counter.module.css'; // Make sure to import the CSS file correctly
 
-function Myday() {
+function Counter() {
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -20,6 +20,7 @@ function Myday() {
 
   const handlePauseTimer = () => {
     setTimerRunning(false);
+    // Store the current elapsed time when pausing
     setElapsedTime(Date.now() - startTime);
   };
 
@@ -35,7 +36,7 @@ function Myday() {
     setTimerDays('00');
     setTimerHours('00');
     setTimerMinutes('00');
-    setTimerSeconds('00');    
+    setTimerSeconds('00');
   };
 
   useEffect(() => {
@@ -70,12 +71,35 @@ function Myday() {
     return number < 10 ? `0${number}` : number.toString();
   };
 
- 
-return (
-  <div className={styles.myDayContainer}>
-    <TacheList/>
-  </div>
-);
+  return (
+    <div className={styles.myDayContainer}>
+      <Clock
+        timerDays={timerDays}
+        timerHours={timerHours}
+        timerMinutes={timerMinutes}
+        timerSeconds={timerSeconds}
+        onStart={handleStartTimer}
+        onPause={handlePauseTimer}
+        onRestart={handleRestartTimer}
+        onStop={handleStopTimer}
+        showRestartButton={!timerRunning && elapsedTime > 0}
+      />
+      <div className={styles.timerButtons}>
+        <button onClick={handleStartTimer} disabled={timerRunning}>
+          Start
+        </button>
+        <button onClick={handlePauseTimer} disabled={!timerRunning}>
+          Pause
+        </button>
+        <button onClick={handleStopTimer} disabled={!timerRunning}>
+          Arrêter
+        </button>
+        <button onClick={handleRestartTimer} disabled={timerRunning || elapsedTime === 0}>
+          Redémarrer
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default Myday;
+export default Counter;
