@@ -1,5 +1,6 @@
 // SignupContext.js
 import React, { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 
 const SignupContext = createContext();
 
@@ -10,12 +11,29 @@ const SignupProvider = ({ children }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+
   const clearForm = () => {
     setUsername('');
     setEmail('');
     setPassword('');
     setConfirmPassword('');
     setError('');
+  };
+
+  const handleSignup = async () => {
+    try {
+      // Your signup logic here
+
+      console.log(`Signed up as ${username}`);
+      setError(''); // Reset previous errors
+
+      // Redirect the user to the custom page after successful signup
+      // Replace '/profil' with the URL of the page you want to display after signup
+      navigate('/profil');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -32,6 +50,7 @@ const SignupProvider = ({ children }) => {
         error,
         setError,
         clearForm,
+        handleSignup,
       }}
     >
       {children}
@@ -48,3 +67,4 @@ const useSignupContext = () => {
 };
 
 export { SignupProvider, useSignupContext };
+
